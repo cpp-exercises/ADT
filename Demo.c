@@ -1,8 +1,8 @@
 /**
- * Demo program for snowman exercise.
+ * Demo program for ADT exercise.
  * 
- * Author: Erel Segal-Halevi
- * Since : 2021-02
+ * Author: Evgeny Hershkovitch Neiterman
+ * Since : 2023-02
  */
 
 #include "AdptArray.h"
@@ -27,15 +27,16 @@ int main() {
 	printf("the book is %s\n",b->name); //should print "Harry Potter"
 	PrintDB(mybooks);
 
-
 	pperson p1 = creat_person("Harry","Potter", 934);
 	pperson p2 = creat_person("Ron","Weasley", 789);
-
 	PAdptArray HP_caracters = CreateAdptArray(copy_person,delete_person,print_person);
 	SetAdptArrayAt(HP_caracters,2,p1);
 	SetAdptArrayAt(HP_caracters,8,p2);
-	printf("the size is %d\n",GetAdptArraySize(HP_caracters)); // prints 
-	PrintDB(HP_caracters);
+	printf("the size is %d\n",GetAdptArraySize(HP_caracters)); // prints 9
+	PrintDB(HP_caracters); // prints:
+	//first name: Harry last name: Potter id: 934
+        //first name: Ron last name: Weasley id: 789
+	
 	DeleteAdptArray(mybooks);
 	DeleteAdptArray(HP_caracters);
 	delete_book(b1);
